@@ -1,9 +1,4 @@
-/* =============================================
-   MURRAY-DARLING BASIN VISUALISATION
-   Aesthetic: Editorial / Natural / Serious
-   Palette: Deep teal, warm earth, off-white
-   ============================================= */
- 
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
  
 :root {
@@ -33,7 +28,7 @@ body {
   font-size: 17px;
 }
  
-/* ---- HERO ---- */
+
 .hero {
   position: relative;
   background: var(--teal-dark);
