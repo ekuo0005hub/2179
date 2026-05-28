@@ -1,4 +1,3 @@
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
  
 :root {
@@ -28,7 +27,7 @@ body {
   font-size: 17px;
 }
  
-
+/* ---- HERO ---- */
 .hero {
   position: relative;
   background: var(--teal-dark);
@@ -83,7 +82,6 @@ body {
 .hero-stats {
   display: flex;
   align-items: center;
-  gap: 0;
   flex-wrap: wrap;
   border-top: 1px solid rgba(255,255,255,0.15);
   padding-top: 2rem;
@@ -164,22 +162,29 @@ body {
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: 2.5rem;
+  align-items: stretch;
 }
  
 .chart-row:has(.chart-wide) {
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr 1fr;
 }
  
 @media (max-width: 900px) {
-  .chart-row:has(.chart-wide) { grid-template-columns: 1fr; }
+  .chart-row:has(.chart-wide) {
+    grid-template-columns: 1fr;
+  }
 }
  
+/* ---- CHART CARDS ---- */
 .chart-block {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 1.75rem;
   box-shadow: 0 2px 12px rgba(26,26,46,0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
  
 .chart-label {
@@ -191,14 +196,19 @@ body {
   margin-bottom: 1rem;
   padding-bottom: 0.6rem;
   border-bottom: 1px solid var(--mist-dark);
+  flex-shrink: 0;
 }
  
 .vega-chart {
   width: 100%;
+  flex: 1;
   overflow: hidden;
+  min-height: 260px;
 }
  
-.vega-chart > div { width: 100% !important; }
+.vega-chart > div {
+  width: 100% !important;
+}
  
 .chart-caption {
   font-size: 0.82rem;
@@ -208,6 +218,7 @@ body {
   line-height: 1.6;
   border-top: 1px solid var(--mist-dark);
   padding-top: 0.75rem;
+  flex-shrink: 0;
 }
  
 /* ---- SECTION DIVIDERS ---- */
@@ -288,5 +299,10 @@ body {
 }
  
 /* ---- VEGA OVERRIDES ---- */
-.vega-embed .vg-tooltip { font-family: var(--font-mono) !important; font-size: 12px !important; }
-.vega-embed summary { display: none !important; }
+.vega-embed .vg-tooltip {
+  font-family: var(--font-mono) !important;
+  font-size: 12px !important;
+}
+.vega-embed summary {
+  display: none !important;
+}
